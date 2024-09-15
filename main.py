@@ -1,3 +1,5 @@
+from utils import read_txt_file
+
 # Import the required module for text 
 # to speech conversion
 from gtts import gTTS
@@ -6,8 +8,18 @@ from gtts import gTTS
 # play the converted audio
 import os
 
+input_dir = "input/"
+output_dir = "output/"
+
+txt_ext = ".txt"
+mp3_ext = ".mp3"
+
 # The text that you want to convert to audio
-mytext = 'Welcome to geeksforgeeks Joe!'
+filename = "visa-direct-funds-transfer-api"
+input_file_path = input_dir + filename + txt_ext
+output_file_path = output_dir + filename + mp3_ext
+
+mytext = read_txt_file(input_file_path)
 
 # Language in which you want to convert
 language = 'en'
@@ -20,4 +32,4 @@ myobj = gTTS(text=mytext, lang=language, slow=False)
 
 # Saving the converted audio in a mp3 file named
 # welcome 
-myobj.save("welcome.mp3")
+myobj.save(output_file_path)

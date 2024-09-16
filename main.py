@@ -1,4 +1,5 @@
 from utils import read_txt_file
+from constants import TXT_EXT, MP3_EXT, INPUT_DIR, OUTPUT_DIR, EN_LANGUAGE
 
 # Import the required module for text 
 # to speech conversion
@@ -8,21 +9,12 @@ from gtts import gTTS
 # play the converted audio
 import os
 
-input_dir = "input/"
-output_dir = "output/"
-
-txt_ext = ".txt"
-mp3_ext = ".mp3"
-
 # The text that you want to convert to audio
-filename = "visa-direct-funds-transfer-api"
-input_file_path = input_dir + filename + txt_ext
-output_file_path = output_dir + filename + mp3_ext
+filename = "introduction"
+input_file_path = f"{INPUT_DIR}/{filename}.{TXT_EXT}"
+output_file_path = f"{OUTPUT_DIR}/{filename}.{MP3_EXT}"
 
 mytext = read_txt_file(input_file_path)
-
-# Language in which you want to convert
-language = 'en'
 
 # Passing the text and language to the engine, 
 # here we have marked slow=False. Which tells 

@@ -1,4 +1,8 @@
 import re
+import os
+
+def get_txt_filenames(directory):
+    return [f for f in os.listdir(directory) if f.endswith('.txt')]
 
 def read_txt_file(file_path):
     try:
